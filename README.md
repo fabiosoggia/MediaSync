@@ -14,6 +14,7 @@ A small library for syncing javascript functions with timed media (audio, video 
 * [HTML5 Audio](http://fabiosoggia.github.io/MediaSync/examples/example-01-audio.html)
 * [HTML5 Video](http://fabiosoggia.github.io/MediaSync/examples/example-02-video.html)
 * [YouTube](http://fabiosoggia.github.io/MediaSync/examples/example-03-youtube.html)
+* [YouTube Karaoke](http://fabiosoggia.github.io/MediaSync/examples/example-04-karaoke.html)
 
 
 ## Installation
