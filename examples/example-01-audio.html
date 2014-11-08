@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MusicSync, Example with Audio Tag</title>
+</head>
+<body>
+	<h1>Example with Audio Tag</h1>
+	<p id="out"><!-- Output goes here --></p>
+	<audio controls id="audio">
+		<source src="audio/sneaky-adventure.mp3" type="audio/mpeg">
+	</audio>
+
+	<script type="text/javascript" src="../src/mediasync.js"></script>
+	<script type="text/javascript" src="../src/mediasync-html5.js"></script>
+	<script type="text/javascript">
+
+		function print (moment, time) {
+			var out = document.getElementById('out');
+			out.innerText = moment.text;
+		}
+
+		// var audio = new Audio('audio/sneaky-adventure.mp3');
+		var audio = document.getElementById('audio');
+		var media = new Html5MediaWrapper(audio);
+
+		var ms = new MediaSync(media, {
+			once: true,
+			moments: [
+					{ at:  0, text: "Press play to start the demo" },
+					{ at:  1, text: "Demo started" },
+					{ at:  5, text: "5 seconds" },
+					{ at: 10, text: "10 seconds" },
+					{ at: 15, text: "15 seconds" },
+					{ at: 16, text: "16 seconds" },
+					{ at: 17, text: "17 seconds" },
+					{ at: 18, text: "18 seconds" },
+					{ at: 74, text: "The End" },
+				],
+			callback: print
+		});
+
+	</script>
+</body>
+</html>

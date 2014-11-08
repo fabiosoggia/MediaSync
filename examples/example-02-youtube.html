@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MusicSync, Example with YouTube Video</title>
+</head>
+<body>
+	<h1>Example with YouTube Video</h1>
+	<p id="out"><!-- Output goes here --></p>
+	<div id="player"><!-- YouTube Player goes here --></div>
+
+	<script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
+	<script type="text/javascript" src="../src/mediasync.js"></script>
+	<script type="text/javascript">
+		function onYouTubeIframeAPIReady() {
+
+			function print (moment, time) {
+				var out = document.getElementById('out');
+				out.innerText = moment.text;
+			}
+
+			// Init youtube player
+			var media = new YT.Player('player', {
+		    	height: '390',
+		    	width: '640',
+		    	videoId: 'YE7VzlLtp-4'
+		  	});
+
+			var steps = [
+					{ at:  0.0, text: "Press play to start the demo." },
+					{ at:  0.1, text: "Demo started." },
+					{ at: 10.0, text: "Look at that! What a wonderful place!" },
+					{ at: 12.0, text: "A stream." },
+					{ at: 16.0, text: "It is a bird!" },
+					{ at: 20.0, text: "It was a bird!" },
+					{ at: 25.0, text: "Big Buck Bunny" },
+					{ at: 74.0, text: "The End" },
+				];
+
+			var ms = new MediaSync(media, {
+					moments: steps,
+					callback: print
+				});
+
+		}
+	</script>
+</body>
+</html>
