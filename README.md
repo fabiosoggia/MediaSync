@@ -79,8 +79,9 @@ var MyLibMediaWrapper = function (media) {
 };
 
 MyLibMediaWrapper.prototype.getCurrentTime = function() {
-    // Let's assume that the instance of your player has a getElapsedTime() method wich return
-    // the current position of the media.
+    // Let's assume that the instance of your player has
+    // a getElapsedTime() method wich return the current
+    // position of the media.
     return this.media.getElapsedTime();
 };
 ```
