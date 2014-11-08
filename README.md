@@ -32,14 +32,14 @@ After your page has loaded, you may call the script like so:
 
 ```javascript
 var ms = new MediaSync(media, {
-    moments: [
-            { at:  0, text: "Callback parameter when media is at 0 sec" },
-            // ...
-            { at: 74, text: "Callback parameter when media is at 74 sec" },
-        ],
-    callback: function(moment, time) {
-        console.log(moment.text);
-    }
+	moments: [
+			{ at:  0, text: "Callback parameter when media is at 0 sec" },
+			// ...
+			{ at: 74, text: "Callback parameter when media is at 74 sec" },
+		],
+	callback: function(moment, time) {
+		console.log(moment.text);
+	}
 });
 ```
 
@@ -51,9 +51,9 @@ This example can be read as 'execute callback at 0/74 with parameters `{ at:  0/
 ## Settings and Defaults
 ```javascript
 settings = {
-    callback: function() { /* ... */ },
-    moments: [ /* ... */ ],
-    once: true
+	callback: function() { /* ... */ },
+	moments: [ /* ... */ ],
+	once: true
 }
 ```
 
@@ -75,15 +75,15 @@ If you are using a custom lib to play a song, a video, a slideshow, whatever cre
 
 ```javascript
 var MyLibMediaWrapper = function (media) {
-    // Where media is an instance of your player
-    this.media = media;
+	// Where media is an instance of your player
+	this.media = media;
 };
 
 MyLibMediaWrapper.prototype.getCurrentTime = function() {
-    // Let's assume that the instance of your player has
-    // a getElapsedTime() method wich return the current
-    // position of the media.
-    return this.media.getElapsedTime();
+	// Let's assume that the instance of your player has
+	// a getElapsedTime() method wich return the current
+	// position of the media.
+	return this.media.getElapsedTime();
 };
 ```
 

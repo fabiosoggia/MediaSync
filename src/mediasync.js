@@ -42,7 +42,7 @@ MediaSync.prototype.search = function(time) {
 
 	// TO DO: replace with a binary search
 	var target = null;
-    for (var i = 1; i < this.moments.length; i++) {
+	for (var i = 1; i < this.moments.length; i++) {
 		target = this.moments[i];
 		if (time < target.at) {
 			return i - 1;

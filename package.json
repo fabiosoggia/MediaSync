@@ -1,11 +1,11 @@
 {
-  "name": "MediaSync",
-  "version": "0.0.1",
-  "description": "A small library for syncing javascript functions with timed media (audio, video and more).",
-  "author": "Fabio Soggia",
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-uglify": "^0.6.0"
-  }
+	"name": "MediaSync",
+	"version": "0.0.1",
+	"description": "A small library for syncing javascript functions with timed media (audio, video and more).",
+	"author": "Fabio Soggia",
+	"devDependencies": {
+		"grunt": "^0.4.5",
+		"grunt-contrib-jshint": "^0.10.0",
+		"grunt-contrib-uglify": "^0.6.0"
+	}
 }
