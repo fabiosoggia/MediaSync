@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MusicSync, Example with Video Tag</title>
+</head>
+<body>
+	<h1>Example with Video Tag</h1>
+	<p id="out"><!-- Output goes here --></p>
+	<video controls width="320" height="240" id="video">
+		<source src="video/big_buck_bunny.mp4" type="video/mp4">
+	</video>
+	<h2>Log</h2>
+	<ul id="log"></ul>
+
+	<script type="text/javascript" src="../src/mediasync.js"></script>
+	<script type="text/javascript" src="../src/mediasync-html5.js"></script>
+	<script type="text/javascript">
+
+		function log (moment, time) {
+			var log = document.getElementById('log');
+			var li = document.createElement('li');
+			li.innerText = moment.text;
+			log.appendChild(li);
+		}
+
+		function print (moment, time) {
+			var out = document.getElementById('out');
+			out.innerText = moment.text;
+		}
+
+		function printAndLog (moment, time) {
+			print(moment, time);
+			log(moment, time);
+		}
+
+		// var video = new Video('video/sneaky-adventure.mp3');
+		var video = document.getElementById('video');
+		var media = new Html5MediaWrapper(video);
+
+		var ms = new MediaSync(media, {
+			once: true,
+			moments: [
+					{ at:  0, text: "Press play to start the demo" },
+					{ at:  1, text: "Demo started" },
+					{ at:  5, text: "5 seconds" },
+					{ at: 10, text: "10 seconds" },
+					{ at: 15, text: "15 seconds" },
+					{ at: 16, text: "16 seconds" },
+					{ at: 17, text: "17 seconds" },
+					{ at: 18, text: "18 seconds" },
+					{ at: 74, text: "The End" },
+				],
+			callback: printAndLog
+		});
+
+	</script>
+</body>
+</html>
