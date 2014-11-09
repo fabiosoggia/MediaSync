@@ -22,7 +22,7 @@ var MediaSync = function (media, settings) {
 
 	this.callback = settings.callback;
 
-	this.once = !settings.once^true;
+	this.once = (settings.once === false) ? false : true;
 	this.last = -1;
 
 	this.update();

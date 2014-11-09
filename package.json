@@ -1,6 +1,6 @@
 {
 	"name": "MediaSync",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A small library for syncing javascript functions with timed media (audio, video and more).",
 	"author": "Fabio Soggia",
 	"devDependencies": {
