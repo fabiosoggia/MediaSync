@@ -40,12 +40,28 @@ MediaSync.prototype.search = function(time) {
 		return this.moments.length-1;
 	}
 
-	// TO DO: replace with a binary search
-	var target = null;
-	for (var i = 1; i < this.moments.length; i++) {
-		target = this.moments[i];
-		if (time < target.at) {
-			return i - 1;
+	// Binary search of the "moment"
+
+	var minIndex = 0;
+	var maxIndex = this.moments.length - 1;
+	var currentIndex;
+	var currentElement;
+	var nextElement;
+
+	while (minIndex <= maxIndex) {
+		currentIndex = (minIndex + maxIndex) / 2 | 0;
+		currentElement = this.moments[currentIndex];
+		nextElement = this.moments[currentIndex + 1];
+
+		if (time >= currentElement.at && time < nextElement.at) {
+			return currentIndex;
+		}
+
+		if (time > currentElement.at) {
+			minIndex = currentIndex + 1;
+		}
+		else {
+			maxIndex = currentIndex - 1;
 		}
 	}
 };
